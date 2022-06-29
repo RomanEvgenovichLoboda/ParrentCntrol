@@ -14,8 +14,8 @@ namespace ParrentCntrol
 {
     public partial class Form1 : Form
     {
-        bool whiteStop;
-        bool blackStop;
+        bool whiteStop = true;
+        bool blackStop = true;
         public Form1()
         {
             InitializeComponent();
@@ -42,13 +42,13 @@ namespace ParrentCntrol
 
         private void buttonStartBlack_Click(object sender, EventArgs e)
         {
-            blackStop = false;
+           // blackStop = false;
             ProcessKill();
         }
 
         private void buttonStartWhite_Click(object sender, EventArgs e)
         {
-            whiteStop = false;
+           // whiteStop = false;
             ProcessStart();
         }
 
@@ -59,8 +59,9 @@ namespace ParrentCntrol
         }
         async void ProcessKill()
         {
-            if (listBoxBlack.Items != null)
+            if (listBoxBlack.Items != null && blackStop)
             {
+                blackStop = false;
                 while (!blackStop)
                 {
                     foreach (var listItem in listBoxBlack.Items)
@@ -85,8 +86,9 @@ namespace ParrentCntrol
 
         async void ProcessStart()
         {
-            if(listBoxWhite.Items != null)
+            if(listBoxWhite.Items != null && whiteStop)
             {
+                whiteStop = false;
                 while (!whiteStop)
                 {
                     foreach(var listItem in listBoxWhite.Items)
