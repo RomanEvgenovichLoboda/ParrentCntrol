@@ -42,13 +42,11 @@ namespace ParrentCntrol
 
         private void buttonStartBlack_Click(object sender, EventArgs e)
         {
-           // blackStop = false;
             ProcessKill();
         }
 
         private void buttonStartWhite_Click(object sender, EventArgs e)
         {
-           // whiteStop = false;
             ProcessStart();
         }
 
