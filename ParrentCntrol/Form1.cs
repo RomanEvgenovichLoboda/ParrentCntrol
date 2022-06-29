@@ -14,7 +14,8 @@ namespace ParrentCntrol
 {
     public partial class Form1 : Form
     {
-        bool close;
+        bool whiteStop;
+        bool blackStop;
         public Form1()
         {
             InitializeComponent();
@@ -41,18 +42,26 @@ namespace ParrentCntrol
 
         private void buttonStartBlack_Click(object sender, EventArgs e)
         {
+            blackStop = false;
             ProcessKill();
+        }
+
+        private void buttonStartWhite_Click(object sender, EventArgs e)
+        {
+            whiteStop = false;
+            ProcessStart();
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            close = true;
+            blackStop = true;
+            whiteStop = true;
         }
         async void ProcessKill()
         {
             if (listBoxBlack.Items != null)
             {
-                while (!close)
+                while (!blackStop)
                 {
                     foreach (var listItem in listBoxBlack.Items)
                     {
@@ -73,11 +82,12 @@ namespace ParrentCntrol
                 }
             }
         }
+
         async void ProcessStart()
         {
             if(listBoxWhite.Items != null)
             {
-                while (!close)
+                while (!whiteStop)
                 {
                     foreach(var listItem in listBoxWhite.Items)
                     {
@@ -104,9 +114,24 @@ namespace ParrentCntrol
             }
         }
 
-        private void buttonStartWhite_Click(object sender, EventArgs e)
+        private void buttonDellBlack_Click(object sender, EventArgs e)
         {
-            ProcessStart();
+            if (listBoxBlack.SelectedIndex >= 0) { listBoxBlack.Items.RemoveAt(listBoxBlack.SelectedIndex); }
+        }
+
+        private void buttonDellWhite_Click(object sender, EventArgs e)
+        {
+            if (listBoxWhite.SelectedIndex >= 0) { listBoxWhite.Items.RemoveAt(listBoxWhite.SelectedIndex); }
+        }
+
+        private void buttonStopBlack_Click(object sender, EventArgs e)
+        {
+            blackStop=true;
+        }
+
+        private void buttonStopWhite_Click(object sender, EventArgs e)
+        {
+            whiteStop=true;
         }
     }
 }

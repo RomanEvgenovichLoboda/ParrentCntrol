@@ -32,12 +32,16 @@
             this.textBoxWhite = new System.Windows.Forms.TextBox();
             this.buttonBlack = new System.Windows.Forms.Button();
             this.Black = new System.Windows.Forms.GroupBox();
-            this.White = new System.Windows.Forms.GroupBox();
-            this.buttonWhite = new System.Windows.Forms.Button();
-            this.listBoxBlack = new System.Windows.Forms.ListBox();
-            this.listBoxWhite = new System.Windows.Forms.ListBox();
+            this.buttonStopBlack = new System.Windows.Forms.Button();
+            this.buttonDellBlack = new System.Windows.Forms.Button();
             this.buttonStartBlack = new System.Windows.Forms.Button();
+            this.listBoxBlack = new System.Windows.Forms.ListBox();
+            this.White = new System.Windows.Forms.GroupBox();
             this.buttonStartWhite = new System.Windows.Forms.Button();
+            this.listBoxWhite = new System.Windows.Forms.ListBox();
+            this.buttonWhite = new System.Windows.Forms.Button();
+            this.buttonStopWhite = new System.Windows.Forms.Button();
+            this.buttonDellWhite = new System.Windows.Forms.Button();
             this.Black.SuspendLayout();
             this.White.SuspendLayout();
             this.SuspendLayout();
@@ -68,6 +72,8 @@
             // 
             // Black
             // 
+            this.Black.Controls.Add(this.buttonStopBlack);
+            this.Black.Controls.Add(this.buttonDellBlack);
             this.Black.Controls.Add(this.buttonStartBlack);
             this.Black.Controls.Add(this.listBoxBlack);
             this.Black.Controls.Add(this.textBoxBlack);
@@ -79,8 +85,49 @@
             this.Black.TabStop = false;
             this.Black.Text = "BlackList";
             // 
+            // buttonStopBlack
+            // 
+            this.buttonStopBlack.Location = new System.Drawing.Point(6, 389);
+            this.buttonStopBlack.Name = "buttonStopBlack";
+            this.buttonStopBlack.Size = new System.Drawing.Size(75, 23);
+            this.buttonStopBlack.TabIndex = 6;
+            this.buttonStopBlack.Text = "Stop";
+            this.buttonStopBlack.UseVisualStyleBackColor = true;
+            this.buttonStopBlack.Click += new System.EventHandler(this.buttonStopBlack_Click);
+            // 
+            // buttonDellBlack
+            // 
+            this.buttonDellBlack.Location = new System.Drawing.Point(127, 379);
+            this.buttonDellBlack.Name = "buttonDellBlack";
+            this.buttonDellBlack.Size = new System.Drawing.Size(106, 23);
+            this.buttonDellBlack.TabIndex = 5;
+            this.buttonDellBlack.Text = "SellectDell";
+            this.buttonDellBlack.UseVisualStyleBackColor = true;
+            this.buttonDellBlack.Click += new System.EventHandler(this.buttonDellBlack_Click);
+            // 
+            // buttonStartBlack
+            // 
+            this.buttonStartBlack.Location = new System.Drawing.Point(6, 360);
+            this.buttonStartBlack.Name = "buttonStartBlack";
+            this.buttonStartBlack.Size = new System.Drawing.Size(75, 23);
+            this.buttonStartBlack.TabIndex = 4;
+            this.buttonStartBlack.Text = "Start";
+            this.buttonStartBlack.UseVisualStyleBackColor = true;
+            this.buttonStartBlack.Click += new System.EventHandler(this.buttonStartBlack_Click);
+            // 
+            // listBoxBlack
+            // 
+            this.listBoxBlack.FormattingEnabled = true;
+            this.listBoxBlack.ItemHeight = 16;
+            this.listBoxBlack.Location = new System.Drawing.Point(6, 78);
+            this.listBoxBlack.Name = "listBoxBlack";
+            this.listBoxBlack.Size = new System.Drawing.Size(227, 276);
+            this.listBoxBlack.TabIndex = 3;
+            // 
             // White
             // 
+            this.White.Controls.Add(this.buttonDellWhite);
+            this.White.Controls.Add(this.buttonStopWhite);
             this.White.Controls.Add(this.buttonStartWhite);
             this.White.Controls.Add(this.listBoxWhite);
             this.White.Controls.Add(this.buttonWhite);
@@ -92,24 +139,15 @@
             this.White.TabStop = false;
             this.White.Text = "WhiteList";
             // 
-            // buttonWhite
+            // buttonStartWhite
             // 
-            this.buttonWhite.Location = new System.Drawing.Point(155, 33);
-            this.buttonWhite.Name = "buttonWhite";
-            this.buttonWhite.Size = new System.Drawing.Size(75, 23);
-            this.buttonWhite.TabIndex = 3;
-            this.buttonWhite.Text = "Add";
-            this.buttonWhite.UseVisualStyleBackColor = true;
-            this.buttonWhite.Click += new System.EventHandler(this.buttonWhite_Click);
-            // 
-            // listBoxBlack
-            // 
-            this.listBoxBlack.FormattingEnabled = true;
-            this.listBoxBlack.ItemHeight = 16;
-            this.listBoxBlack.Location = new System.Drawing.Point(6, 78);
-            this.listBoxBlack.Name = "listBoxBlack";
-            this.listBoxBlack.Size = new System.Drawing.Size(227, 276);
-            this.listBoxBlack.TabIndex = 3;
+            this.buttonStartWhite.Location = new System.Drawing.Point(6, 360);
+            this.buttonStartWhite.Name = "buttonStartWhite";
+            this.buttonStartWhite.Size = new System.Drawing.Size(75, 23);
+            this.buttonStartWhite.TabIndex = 5;
+            this.buttonStartWhite.Text = "Start";
+            this.buttonStartWhite.UseVisualStyleBackColor = true;
+            this.buttonStartWhite.Click += new System.EventHandler(this.buttonStartWhite_Click);
             // 
             // listBoxWhite
             // 
@@ -120,25 +158,35 @@
             this.listBoxWhite.Size = new System.Drawing.Size(224, 276);
             this.listBoxWhite.TabIndex = 4;
             // 
-            // buttonStartBlack
+            // buttonWhite
             // 
-            this.buttonStartBlack.Location = new System.Drawing.Point(6, 379);
-            this.buttonStartBlack.Name = "buttonStartBlack";
-            this.buttonStartBlack.Size = new System.Drawing.Size(75, 23);
-            this.buttonStartBlack.TabIndex = 4;
-            this.buttonStartBlack.Text = "Start";
-            this.buttonStartBlack.UseVisualStyleBackColor = true;
-            this.buttonStartBlack.Click += new System.EventHandler(this.buttonStartBlack_Click);
+            this.buttonWhite.Location = new System.Drawing.Point(155, 33);
+            this.buttonWhite.Name = "buttonWhite";
+            this.buttonWhite.Size = new System.Drawing.Size(75, 23);
+            this.buttonWhite.TabIndex = 3;
+            this.buttonWhite.Text = "Add";
+            this.buttonWhite.UseVisualStyleBackColor = true;
+            this.buttonWhite.Click += new System.EventHandler(this.buttonWhite_Click);
             // 
-            // buttonStartWhite
+            // buttonStopWhite
             // 
-            this.buttonStartWhite.Location = new System.Drawing.Point(6, 379);
-            this.buttonStartWhite.Name = "buttonStartWhite";
-            this.buttonStartWhite.Size = new System.Drawing.Size(75, 23);
-            this.buttonStartWhite.TabIndex = 5;
-            this.buttonStartWhite.Text = "Start";
-            this.buttonStartWhite.UseVisualStyleBackColor = true;
-            this.buttonStartWhite.Click += new System.EventHandler(this.buttonStartWhite_Click);
+            this.buttonStopWhite.Location = new System.Drawing.Point(6, 392);
+            this.buttonStopWhite.Name = "buttonStopWhite";
+            this.buttonStopWhite.Size = new System.Drawing.Size(75, 23);
+            this.buttonStopWhite.TabIndex = 6;
+            this.buttonStopWhite.Text = "Stop";
+            this.buttonStopWhite.UseVisualStyleBackColor = true;
+            this.buttonStopWhite.Click += new System.EventHandler(this.buttonStopWhite_Click);
+            // 
+            // buttonDellWhite
+            // 
+            this.buttonDellWhite.Location = new System.Drawing.Point(124, 379);
+            this.buttonDellWhite.Name = "buttonDellWhite";
+            this.buttonDellWhite.Size = new System.Drawing.Size(106, 23);
+            this.buttonDellWhite.TabIndex = 7;
+            this.buttonDellWhite.Text = "SellectDell";
+            this.buttonDellWhite.UseVisualStyleBackColor = true;
+            this.buttonDellWhite.Click += new System.EventHandler(this.buttonDellWhite_Click);
             // 
             // Form1
             // 
@@ -170,6 +218,10 @@
         private System.Windows.Forms.ListBox listBoxWhite;
         private System.Windows.Forms.Button buttonStartBlack;
         private System.Windows.Forms.Button buttonStartWhite;
+        private System.Windows.Forms.Button buttonDellBlack;
+        private System.Windows.Forms.Button buttonStopBlack;
+        private System.Windows.Forms.Button buttonStopWhite;
+        private System.Windows.Forms.Button buttonDellWhite;
     }
 }
 
